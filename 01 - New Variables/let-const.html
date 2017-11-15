@@ -5,18 +5,22 @@
   <title>let and const</title>
 </head>
 <body>
-<script>
-  const key = 'abc123';
-  let points = 50;
-  let winner = false;
+  <script>
+    const key = 'abc123';
+    let points = 50;
+    let winner = false;
 
-  const person = {
-    name: 'Wes',
-    age: 28
-  }
+    if (points > 40) {
+      let winner = true;
+    }
 
-  const wes = Object.freeze(person);
+    const person = {
+      name: 'Wes',
+      age: 28
+    }
 
-</script>
+    const wes = Object.freeze(person);
+
+  </script>
 </body>
 </html>
