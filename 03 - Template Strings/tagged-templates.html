@@ -10,22 +10,27 @@
   </style>
 </head>
 <body>
-<script>
-  function highlight(strings, ...values) {
-    let str = '';
-    strings.forEach((string, i) => {
-      str += `${string} <span contenteditable class="hl">${values[i] || ''}</span>`;
-    });
-    return str;
-  }
+  <script>
 
-  const name = 'Snickers';
-  const age = 100;
+    /*function highlight(strings, name, age) {*/
+    function highlight(strings, ...values) {
+      //debugger;
+      let str = '';
+      strings.forEach((string, i) => {
+        // str += string + (values[i] || '');
+        str += `${string} <span contenteditable class="hl">${values[i] || ''}</span>`;
+      });
+      return str;
+    }
 
-  const sentence = highlight`My dog's name is ${name} and he is ${age} years old`;
-  document.body.innerHTML = sentence;
-  console.log(sentence);
+    const name = 'Snickers';
+    const age = 100;
+    const gender = 'male';
 
-</script>
+    const sentence = highlight`My dog's name is ${name} and he is ${age} years old, ${gender}`;
+    document.body.innerHTML = sentence;
+    console.log(sentence);
+
+  </script>
 </body>
 </html>
