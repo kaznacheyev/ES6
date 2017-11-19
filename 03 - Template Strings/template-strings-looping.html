@@ -5,25 +5,34 @@
   <title>Template Strings!</title>
 </head>
 <body>
-<script>
-  const dogs = [
-    { name: 'Snickers', age: 2 },
-    { name: 'Hugo', age: 8 },
-    { name: 'Sunny', age: 1 }
-  ];
+  <script>
 
-  const markup = `
-    <ul class="dogs">
-      ${dogs.map(dog => `
-        <li>
-          ${dog.name}
-          is
-          ${dog.age * 7}
-        </li>`).join('')}
-    </ul>
-  `;
-  document.body.innerHTML = markup;
+    const dogs = [
+      { name: 'Snickers', age: 2 },
+      { name: 'Hugo', age: 8 },
+      { name: 'Sunny', age: 1 }
+    ];
 
-</script>
+    /*const markup = `
+      <ul class="dogs">
+        <li>${dogs[0].name} is ${dogs[0].age * 7}</li>
+        <li>${dogs[1].name} is ${dogs[1].age * 7}</li>
+        <li>${dogs[2].name} is ${dogs[2].age * 7}</li>
+      </ul>
+    `;
+    console.log(markup);
+    document.body.innerHTML = markup;*/
+
+
+    const markup = `
+      <ul class="dogs">
+        ${dogs.map(dog => `<li>${dog.name} is ${dog.age * 7}</li>`).join('')}
+      </ul>
+    `;
+
+    console.log(markup);
+    document.body.innerHTML = markup;
+
+  </script>
 </body>
 </html>
