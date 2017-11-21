@@ -1,38 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>New String Methods</title>
+	<meta charset="UTF-8">
+	<title>New String Methods</title>
 </head>
 <body>
 
-<script>
-const course = 'RFB2';
-const flightNumber = '20-AC2018-jz';
-const accountNumber = '825242631RT0001';
+	<script>
 
-const make = 'BMW';
-const model = 'x5';
-const colour = 'Royal Blue';
+		const course = 'RFB2';
+		const flightNumber = '20-AC2018-jz';
+		const accountNumber = '825242631RT0001';
 
-// .startsWith()
+		const make = 'BMW';
+		const model = 'x5';
+		const colour = 'Royal Blue';
 
-// .endsWith()
+		// .startsWith()
 
-// .includes()
+		console.log(`course.startsWith('RFB') - ${course.startsWith('RFB')}`);
+		console.log(`course.startsWith('rfb') - ${course.startsWith('rfb')}`);
+		console.log(`flightNumber.startsWith('AC', 3) - ${flightNumber.startsWith('AC', 3)}`);
 
-// .repeat()
+		// .endsWith()
 
-function leftPad(str, length = 20) {
-  return `→ ${' '.repeat(length - str.length)}${str}`;
-}
+		console.log(`flightNumber.endsWith('jz') - ${flightNumber.endsWith('jz')}`);
+		console.log(`accountNumber.endsWith('RT', 11) - ${accountNumber.endsWith('RT', 11)}`);
 
-console.log(leftPad(make));
-console.log(leftPad(model));
-console.log(leftPad(colour));
+		// .includes()
+
+		console.log(`flightNumber.includes('AC') - ${flightNumber.includes('AC')}`);
+		console.log(`flightNumber.includes('ac') - ${flightNumber.includes('ac')}`);
+
+		// .repeat()
+
+		console.log(`'🦊'.repeat(10) - ${'🦊'.repeat(10)}`);
 
 
-</script>
+		function leftPad(str, length = 20) {
+			return `→ ${' '.repeat(length - str.length)}${str}`;
+		}
+
+		console.log(leftPad(make));
+		console.log(leftPad(model));
+		console.log(leftPad(colour));		
+
+	</script>
 
 </body>
 </html>
