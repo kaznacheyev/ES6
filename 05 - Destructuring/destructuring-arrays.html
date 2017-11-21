@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Destructuring Arrays</title>
+	<meta charset="UTF-8">
+	<title>Destructuring Arrays</title>
 </head>
 <body>
-<script>
-  const details = ['Wes Bos', 123, 'wesbos.com'];
-  const [name, id, website] = details;
-  console.log(name, id, website);
+	<script>
 
-  const data = 'Basketball,Sports,90210,23,wes,bos,cool';
-  const [itemName, category, sku, inventory] = data.split(',');
+		const details = ['Wes Bos', 123, 'wesbos.com'];
 
-  const team = ['Wes', 'Harry', 'Sarah', 'Keegan', 'Riker'];
+		// const name = details[0];
+		// const id = details[1];
+		// const website = details[2];
 
-  const [captain, assistant, ...players] = team;
+		const [name, id, website] = details;
+		console.log(name, id, website);
 
-</script>
+		const data = 'Basketball,Sports,90210,23,wes,bos,cool';
+		const [itemName, category, sku, inventory] = data.split(',');
+
+		console.log(itemName, category, sku, inventory);
+
+
+		const team = ['Wes', 'Harry', 'Sarah', 'Keegan', 'Riker'];
+		
+		// const [captain, assistant, players] = team;
+		// console.log(captain, assistant, players);
+
+		const [captain, assistant, ...players] = team;
+		console.log(captain, assistant, ...players);
+
+	</script>
 </body>
 </html>
