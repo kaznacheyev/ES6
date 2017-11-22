@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Destructuring in Action!</title>
+	<meta charset="UTF-8">
+	<title>Destructuring in Action!</title>
 </head>
 <body>
-<script>
-  let inRing = 'Hulk Hogan';
-  let onSide = 'The Rock';
+	<script>
 
-  console.log(inRing, onSide);
-  [inRing, onSide] = [onSide, inRing];
-  console.log(inRing, onSide);
+		let inRing = 'Hulk Hogan';
+		let onSide = 'The Rock';
 
-</script>
+		// var tmp = inRing;
+		// inRing = onSide;
+		// onSide = tmp;
+
+		console.log(inRing, onSide);
+		[inRing, onSide] = [onSide, inRing];
+		console.log(inRing, onSide);
+
+	</script>
 </body>
 </html>
