@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Extending</title>
+	<meta charset="UTF-8">
+	<title>Extending</title>
 </head>
 <body>
-<script>
-  class MovieCollection extends Array {
-    constructor(name, ...items) {
-      super(...items);
-      this.name = name;
-    }
-    add(movie) {
-      this.push(movie);
-    }
-    topRated(limit = 10) {
-      return this.sort((a, b) => (a.stars > b.stars ? -1 : 1)).slice(0, limit);
-    }
-  }
+	<script>
 
-  const movies = new MovieCollection('Wes\'s Fav Movies',
-    { name: 'Bee Movie', stars: 10 },
-    { name: 'Star Wars Trek', stars: 1 },
-    { name: 'Virgin Suicides', stars: 7 },
-    { name: 'King of the Road', stars: 8 }
-  );
+		class MovieCollection extends Array {
+			constructor(name, ...items) {
+				// super(items);
+				super(...items);
+				this.name = name;
+			}
+			add(movie) {
+				this.push(movie);
+			}
+			topRated(limit = 10) {
+				return this.sort((a, b) => (a.stars > b.stars ? -1 : 1)).slice(0, limit);
+			}
+		}
 
-  movies.add({ name: 'Titanic', stars: 5 });
 
-</script>
+		const movies = new MovieCollection('Wes\'s Fav Movies',
+			{ name: 'Bee Movie', stars: 10 },
+			{ name: 'Star Wars Trek', stars: 1 },
+			{ name: 'Virgin Suicides', stars: 7 },
+			{ name: 'King of the Road', stars: 8 }
+		);
+
+		movies.add({ name: 'Titanic', stars: 5});
+
+		console.table(movies.topRated());
+		
+		for (const movie in movies) {
+			console.log(movie);
+		}
+
+		for (const movie of movies) {
+			console.log(movie);
+		}
+
+		console.log(movies);
+
+	</script>
 </body>
 </html>
