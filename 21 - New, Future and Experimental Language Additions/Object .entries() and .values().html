@@ -2,36 +2,50 @@
 <html lang="en">
 
 <head>
-  <title>Object .entries() and .values()</title>
+	<title>Object .entries() and .values()</title>
 </head>
 
 <body>
-  <script>
-    const inventory = {
-      backpacks: 10,
-      jeans: 23,
-      hoodies: 4,
-      shoes: 11
-    };
+	<script>
 
-    // Make a nav for the inventory
-    const nav = Object.keys(inventory).map(item => `<li>${item}</li>`).join('');
-    console.log(nav);
+		const inventory = {
+			backpacks: 10,
+			jeans: 23,
+			hoodies: 4,
+			shoes: 11
+		};
 
-    // tell us how many values we have
-    const totalInventory = Object.values(inventory).reduce((a, b) => a + b);
-    console.log(totalInventory);
+		console.log(Object.keys(inventory));
+		console.log(Object.values(inventory));
+		console.log(Object.entries(inventory));
 
-    // Print an inventory list with numbers
-    Object.entries(inventory).forEach(([key, val]) => {
-      console.log(key, val);
-    });
+		// Make a nav for the inventory
+		const nav = Object.keys(inventory).map(item => `<li>${item}</li>`).join('');
+		console.log(nav);
 
-    for (const [key, val] of Object.entries(inventory)) {
-      console.log(key);
-      if (key === 'jeans') break;
-    }
-  </script>
+		// Tell us how many values we have
+		const totalInventory = Object.values(inventory).reduce((a, b) => a + b);
+		console.log(totalInventory);
+
+		// Print an inventory list with number
+
+		// Object.entries(inventory).forEach(pair => {
+		// 	console.log(pair);
+		// 	const [key, val] = pair;
+		// 	console.log(key, val);
+		// })
+
+		Object.entries(inventory).forEach(([key, val]) => {
+			console.log(key, val);
+		})
+
+		for (const [key, val] of Object.entries(inventory)) {
+			console.log(key);
+			if (key === 'jeans') break;
+		}
+
+
+	</script>
 </body>
 
 </html>

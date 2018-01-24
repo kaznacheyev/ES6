@@ -2,16 +2,21 @@
 <html lang="en">
 
 <head>
-  <title>String padStart and padEnd</title>
+	<title>String padStart and padEnd</title>
 </head>
 
 <body>
-  <script>
-    const strings = ['short', 'medium size', 'this is really really long', 'this is really reall really really really really long'];
-    const longestString = strings.sort(str => str.length).map(str => str.length)[0];
+	<script>
 
-    strings.forEach(str => console.log(str.padStart(longestString)));
-  </script>
+		const strings = ['short', 'medium size', 'this is really really long', 'this is really reall really really really really long'];
+
+		const longestString = strings.sort(str => str.length).map(str => str.length)[0];
+		console.log(longestString);
+
+		// strings.forEach(str => console.log(str.padStart(30)));
+		strings.forEach(str => console.log(str.padStart(longestString)));
+
+	</script>
 </body>
 
 </html>
